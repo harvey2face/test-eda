@@ -1,0 +1,11 @@
+---
+- name: TEST EDA
+  hosts: all
+  gather_facts: false
+
+  tasks:
+  - name: Enable {{ port }}
+    cisco.ios.ios_interfaces:
+      config:
+        - name: "{{ port }}"
+          enabled: true
