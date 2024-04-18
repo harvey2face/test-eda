@@ -11,7 +11,7 @@
     - name: Display Data and Launch Playbook
       condition: event.body is search('interface-notif-state-down',ignorecase=true)
       action:
-        debug:
-          var: event.body
+        # debug:
+        #   var: event.body
         run_playbook:
           name: enable_port.yml
