@@ -1,6 +1,8 @@
 ---
 - name: Demo rules with kafka as source
   hosts: all
+  vars:
+    organization: vem
   sources:
   - ansible.eda.kafka:
       topic: telegraf
