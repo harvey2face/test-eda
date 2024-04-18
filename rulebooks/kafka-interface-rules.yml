@@ -9,8 +9,9 @@
       group_id:
   rules:
     - name: Display Data and Launch Playbook
-      #condition: event.fields.new_state == 'interface-notif-state-down'
-      condition: true
+      condition: event.body is search('interface-notif-state-dow',ignorecase=true)
       action:
+        #run_playbook:
+        #  name: say-what.yml
         debug:
-          msg: "TEST EDA!"
+          var: event.body
