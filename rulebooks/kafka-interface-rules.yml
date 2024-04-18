@@ -10,7 +10,7 @@
   rules:
     - name: Display Data and Launch Playbook
       #condition: event.fields.new_state == 'interface-notif-state-down'
-      condition: event.message != ""
+      condition: event.payload.message != ""
       action:
         debug:
           msg: "TEST EDA!"
