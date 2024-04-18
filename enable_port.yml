@@ -2,6 +2,8 @@
 - name: TEST EDA
   hosts: all
   gather_facts: false
+  vars:
+    organization: vem
 
   tasks:
   - name: Enable {{ port }}
