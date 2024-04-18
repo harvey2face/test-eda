@@ -13,5 +13,5 @@
       action:
         # debug:
         #   var: event.body
-        run_playbook:
+        run_job_template:
           name: enable_port.yml
