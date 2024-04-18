@@ -1,0 +1,8 @@
+all:
+  children:
+    demo_lab:
+      hosts:
+        localhost:
+          ansible_host: 127.0.0.1
+        TIGStack:
+          ansible_host: 10.255.4.221

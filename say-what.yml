@@ -1,0 +1,9 @@
+---
+- name: TEST EDA
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+  - name: say thanks
+    debug:
+      msg: "Thank you, my friend!"

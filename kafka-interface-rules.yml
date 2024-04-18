@@ -1,0 +1,16 @@
+---
+- name: Demo rules with kafka as source
+  hosts: all
+  sources:
+  - ansible.eda.kafka:
+      topic: telegraf
+      host: 10.255.4.221
+      port: 9092
+      group_id:
+  rules:
+    - name: Display Data and Launch Playbook
+      #condition: event.fields.new_state == 'interface-notif-state-down'
+      condition: event.message != ""
+      action:
+        debug:
+          msg: "TEST EDA!"
