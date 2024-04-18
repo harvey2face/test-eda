@@ -10,10 +10,10 @@
   rules:
     - name: Display Data and Launch Playbook
       condition: event.body is search('interface-notif-state-down',ignorecase=true)
-      vars:
-        organization: vem
       action:
-        # debug:
-        #   var: event.body
-        run_job_template:
-          name: enable_port.yml
+        - set_fact:
+            json_body: "{{ event.body | regex_replace('([^=]+)=(\\\"[^\\\"]+\\\")', '\\1=\\2') | regex_replace('([^,]+)=([^,]+)', '\"\\1\":\\2') | from_json }}"
+        - set_fact:
+            structured_data: "{{ json_body | combine({'organization': 'vem'}) }}"
+        - run_job_template:
+            name: enable_port.yml
