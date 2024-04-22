@@ -9,10 +9,12 @@
       group_id:
   rules:
     - name: Display Data and Launch Playbook
-      condition: event.body is search('interface-notif-state-down',ignorecase=true)
+      condition: event.body.fields.new_state == "interface-notif-state-down"
       action:
-        # debug:
-        #   var: event.body
         run_job_template:
           name: enable_port.yml
           organization: vem
+          job_args:
+            extra_vars:
+              downinterface: "{{ event.body.fields.if_name }}"
+              device: "{{ event.body.fields.host_name }}"

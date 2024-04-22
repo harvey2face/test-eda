@@ -1,11 +1,11 @@
 ---
 - name: TEST EDA
-  hosts: all
+  hosts: "{{ device | default('all') }}"
   gather_facts: false
 
   tasks:
-  - name: Enable {{ port }}
+  - name: Enable {{ downinterface }}
     cisco.ios.ios_interfaces:
       config:
-        - name: "{{ port }}"
+        - name: "{{ downinterface }}"
           enabled: true
