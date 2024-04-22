@@ -4,12 +4,6 @@
   gather_facts: false
 
   tasks:
-  - name: Set stats
-    ansible.builtin.set_stats:
-        aggregate: false
-        data:
-          downinterface: "{{ downinterface }}"
-
   - name: Enable {{ downinterface }}
     cisco.ios.ios_interfaces:
       config:
