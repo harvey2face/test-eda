@@ -4,7 +4,7 @@
   gather_facts: false
 
   tasks:
-  - name: Enable {{ downinterface }}
+  - name: Enable Interface
     cisco.ios.ios_interfaces:
       config:
         - name: "{{ downinterface }}"
