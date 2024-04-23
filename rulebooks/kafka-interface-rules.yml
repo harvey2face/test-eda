@@ -5,7 +5,7 @@
   - ansible.eda.kafka:
       topic: telegraf
       host: 10.255.4.221
-      port: 9093
+      port: 9092
       group_id:
   rules:
     - name: A Down Interface has been detected
