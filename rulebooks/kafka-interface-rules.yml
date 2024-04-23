@@ -16,5 +16,6 @@
           organization: vem
           job_args:
             extra_vars:
-              if_name: "{{ event.body.fields.if_name }}"
+              #if_name: "{{ event.body.fields.if_name }}"
+              if_name: "Gi3"
               device: "{{ event.body.fields.host_name }}"
