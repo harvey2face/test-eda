@@ -15,7 +15,6 @@
           name: enable_port.yml
           organization: vem
           job_args:
-            extra_vars:
-              #if_name: "{{ event.body.fields.if_name }}"
-              if_name: "Gi3"
+            vars:
+              if_name: "{{ event.body.fields.if_name }}"
               device: "{{ event.body.fields.host_name }}"
