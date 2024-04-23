@@ -1,5 +1,5 @@
 ---
-- name: TEST EDA
+- name: Remediate Downed Interface
   hosts: "{{ device | default('all') }}"
   gather_facts: false
 

@@ -5,10 +5,10 @@
   - ansible.eda.kafka:
       topic: telegraf
       host: 10.255.4.221
-      port: 9092
+      port: 9093
       group_id:
   rules:
-    - name: Display Data and Launch Playbook
+    - name: A Down Interface has been detected
       condition: event.body.fields.new_state == "interface-notif-state-down"
       action:
         run_job_template:
